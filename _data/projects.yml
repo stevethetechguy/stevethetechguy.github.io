@@ -2,24 +2,15 @@
 #
 #   name:     what it's called
 #   what:     one line, shown on the card
-#   about:    a longer paragraph, shown on the Projects page
-#   image:    /assets/img/something.png   (optional - a designed cover is used if omitted)
+#   about:    a longer paragraph, shown on the Projects page (optional)
+#   image:    /assets/img/something.png  (optional - card falls back to text only)
 #   link:     where it lives
-#   tags:     [a, few, words]
-#   year:     2026
-#   featured: true    also puts it on the home page
+#   tags:     [a, few, words]            (optional)
+#   year:     2026                       (optional)
+#   featured: true                       also puts it on the home page
 
-- name: This website
-  what: A personal site built from scratch - no template, no theme.
-  about: >
-    I wanted somewhere to put my work that wasn't a GitHub profile page, so I built one.
-    It runs on Jekyll and GitHub Pages, which means essays are just markdown files I push
-    and everything else is YAML - I never have to open an HTML file to add something.
-    The design is mine: a box of eight crayon colours that rotate across cards, thick
-    outlines, and solid offset shadows instead of blurred ones. Every colour is
-    contrast-checked so the text is readable in both light and dark.
+- name: Personal Site
+  what: A personal site for my ideas and thoughts.
   image: /assets/img/site-home.png
   link: https://github.com/stevethetechguy/stevethetechguy.github.io
-  tags: [Jekyll, Design, GitHub Pages]
-  year: 2026
   featured: true
