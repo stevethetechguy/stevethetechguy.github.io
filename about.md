@@ -3,6 +3,7 @@ layout: page
 title: About
 blurb: Who I am and what I'm doing.
 permalink: /about/
+published: false      # flip to true to put it back up
 ---
 
 <div class="prose" markdown="1">
