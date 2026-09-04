@@ -5,10 +5,12 @@
 #   status:   current | finished | queued
 #   note:     one line - what it's about, or why you picked it up
 #   finished: 2026-08   (only for finished books)
+#   image:    /assets/img/books/slug.svg  (optional)
 
 - title: Scale
   author: Geoffrey West
   status: current
+  image: /assets/img/books/scale.svg
   note: >
     The universal laws of growth. Why animals, cities and companies all
     scale by the same handful of mathematical rules - and why companies
