@@ -36,22 +36,6 @@ layout: default
 </section>
 {% endif %}
 
-{% assign now_reading = site.data.reading | where: "status", "current" %}
-{% if now_reading.size > 0 %}
-<section>
-  <div class="sh"><h2>Reading right now</h2><a href="{{ '/reading/' | relative_url }}">The whole list</a></div>
-  <div class="grid">
-    {% for b in now_reading %}
-    <article class="card">
-      <h3>{{ b.title }}</h3>
-      {% if b.note %}<p>{{ b.note }}</p>{% endif %}
-      {% if b.author %}<div class="meta"><span class="pill">{{ b.author }}</span></div>{% endif %}
-    </article>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
 <section class="tick">
   <div class="sh"><h2>What makes me tick</h2></div>
   <p class="tick-lead">Learn more.</p>

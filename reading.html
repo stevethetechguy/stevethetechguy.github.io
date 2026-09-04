@@ -1,27 +1,36 @@
 ---
 layout: page
 title: Reading
-blurb: What I'm reading, what I finished, and what's waiting.
+blurb: What I'm reading at the moment. One book at a time.
 permalink: /reading/
 ---
-{% if site.data.reading and site.data.reading.size > 0 %}
-  {% assign shelves = "current,Right now|finished,Finished|queued,Next up" | split: "|" %}
-  {% for shelf in shelves %}
-    {% assign bits = shelf | split: "," %}
-    {% assign books = site.data.reading | where: "status", bits[0] %}
-    {% if books.size > 0 %}
-    <section>
-      <div class="sh"><h2>{{ bits[1] }}</h2></div>
-      <div class="grid projects">
-        {% for b in books %}{% include book.html book=b %}{% endfor %}
-      </div>
-    </section>
+{% assign current = site.data.reading | where: "status", "current" %}
+{% assign book = current | first %}
+{% if book %}
+  {% assign review = site.reviews | where: "slug", book.review | first %}
+  <article class="feature{% unless book.image %} no-cover{% endunless %}">
+    {% if book.image %}
+    <div class="feature-cover">
+      {% if review %}<a href="{{ review.url | relative_url }}" tabindex="-1" aria-hidden="true">{% endif %}
+      <img src="{{ book.image | relative_url }}" alt="Illustration for {{ book.title }}">
+      {% if review %}</a>{% endif %}
+    </div>
     {% endif %}
-  {% endfor %}
+    <div class="feature-body">
+      <h2>{% if review %}<a href="{{ review.url | relative_url }}">{{ book.title }}</a>{% else %}{{ book.title }}{% endif %}</h2>
+      {% if book.author %}<div class="feature-author">{{ book.author }}</div>{% endif %}
+      {% if book.note %}<p>{{ book.note }}</p>{% endif %}
+      {% if review %}
+        <a class="review-link" href="{{ review.url | relative_url }}">Read my review &rarr;</a>
+      {% else %}
+        <span class="review-soon">Review when I finish it</span>
+      {% endif %}
+    </div>
+  </article>
 {% else %}
 <div class="empty">
-  <h3>No books listed yet</h3>
-  <p>The list comes from <code>_data/reading.yml</code>. Each book takes a title, an author,
-  and a <code>status</code> of current, finished, or queued.</p>
+  <h3>Not reading anything right now</h3>
+  <p>Set a book to <code>status: current</code> in <code>_data/reading.yml</code>
+  and it shows up here.</p>
 </div>
 {% endif %}

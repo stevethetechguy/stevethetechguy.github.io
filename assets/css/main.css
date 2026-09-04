@@ -160,6 +160,30 @@ section{padding:clamp(30px,5vw,54px) 0 0}
 .card-body .lede{margin-top:0;font-size:16px;color:var(--ink);font-weight:700}
 .card-body p+p{margin-top:9px;font-size:15px;font-weight:600;color:var(--ink2)}
 
+/* one book, full width */
+.feature{display:grid;grid-template-columns:minmax(0,46%) minmax(0,1fr);
+  background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
+  box-shadow:9px 9px 0 var(--c4);overflow:hidden;margin-top:8px}
+.feature.no-cover{grid-template-columns:1fr}
+.feature-cover{line-height:0;border-right:var(--bw) solid var(--ink);background:var(--line)}
+.feature-cover a{box-shadow:none;display:block;height:100%}
+.feature-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.feature-body{padding:clamp(24px,4vw,42px);display:flex;flex-direction:column;
+  justify-content:center}
+.feature-body h2{font-size:clamp(30px,4.6vw,46px);line-height:1.05}
+.feature-body h2 a{color:var(--ink);box-shadow:none}
+.feature-body h2 a:hover{color:var(--c4);box-shadow:none}
+.feature-author{margin-top:10px;font-weight:800;font-size:14px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--c4)}
+.feature-body p{margin:18px 0 0;font-size:clamp(16.5px,1.9vw,18.5px);line-height:1.6;
+  color:var(--ink2);font-weight:600;max-width:46ch}
+.feature .review-link,.feature .review-soon{margin-top:22px;--c:var(--c4)}
+@media(max-width:760px){
+  .feature{grid-template-columns:1fr}
+  .feature-cover{border-right:0;border-bottom:var(--bw) solid var(--ink)}
+  .feature-cover img{aspect-ratio:16/9}
+}
+
 /* review link on a card */
 .review-link{display:inline-block;margin-top:14px;font-size:14.5px;font-weight:800;
   color:var(--c);box-shadow:none}
