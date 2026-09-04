@@ -1,7 +1,15 @@
-# What you're reading. `current: true` puts it in the "right now" row.
+# What you're reading.
 #
-# - title: The Pragmatic Programmer
-#   author: Hunt and Thomas
-#   status: current         # current | finished | queued
-#   note: One line on why you picked it up.
-#   finished: 2026-08
+#   title:    the book
+#   author:   who wrote it
+#   status:   current | finished | queued
+#   note:     one line - what it's about, or why you picked it up
+#   finished: 2026-08   (only for finished books)
+
+- title: Scale
+  author: Geoffrey West
+  status: current
+  note: >
+    The universal laws of growth. Why animals, cities and companies all
+    scale by the same handful of mathematical rules - and why companies
+    die but cities almost never do.
