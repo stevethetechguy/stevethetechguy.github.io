@@ -1,17 +1,18 @@
 ---
 layout: default
-title: null
 ---
 <div class="hero">
-  <span class="hi">Hi, I'm Steve</span>
-  <h1>I build <em>things</em>.</h1>
-  <p>{{ site.tagline }}</p>
-  <div class="cta">
-    <a class="btn solid" href="{{ '/projects/' | relative_url }}">See my projects</a>
-    <a class="btn" href="{{ '/essays/' | relative_url }}">Read my essays</a>
-    <a class="btn" href="https://github.com/{{ site.github_username }}">GitHub</a>
-  </div>
+  <span class="hi">{{ page.greeting | default: "Hi, I'm Steve" }}</span>
+  <h1>{{ page.headline | default: "I build things." }}</h1>
+  <p>{{ page.tagline | default: site.tagline }}</p>
 </div>
+
+<section class="nowsec">
+  <div class="sh"><h2>{{ page.now_title | default: "What I'm working on" }}</h2></div>
+  <div class="prose nowbody">
+    {{ content }}
+  </div>
+</section>
 
 {% if site.posts.size > 0 %}
 <section>

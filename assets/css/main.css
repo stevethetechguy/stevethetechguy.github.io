@@ -92,6 +92,11 @@ a{color:var(--accent);font-weight:700;text-decoration:none}
 .cta .btn:nth-child(1){--c:var(--c6)} .cta .btn:nth-child(2){--c:var(--c8)}
 .cta .btn:nth-child(3){--c:var(--c4)} .cta .btn:nth-child(4){--c:var(--c2)}
 
+.nowsec{padding-top:clamp(30px,5vw,50px)}
+.nowbody{max-width:62ch;font-size:18.5px}
+.nowbody > p:first-child{margin-top:0}
+.nowbody strong{color:var(--ink);font-weight:800}
+
 /* 404 */
 .four .digits{display:flex;gap:clamp(6px,1.6vw,16px);margin-bottom:clamp(14px,2.4vw,24px)}
 .four .digits span{font-family:var(--disp);font-weight:800;
