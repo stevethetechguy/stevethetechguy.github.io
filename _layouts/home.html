@@ -2,9 +2,13 @@
 layout: default
 ---
 <div class="hero">
-  <span class="hi">{{ page.greeting | default: "Hi, I'm Steve" }}</span>
-  <h1>{{ page.headline | default: "I build things." }}</h1>
-  <p>{{ page.tagline | default: site.tagline }}</p>
+  {% if page.headline %}
+    <span class="hi">{{ page.greeting | default: "Meet Steve" }}</span>
+    <h1>{{ page.headline }}</h1>
+  {% else %}
+    <h1 class="hi">{{ page.greeting | default: "Meet Steve" }}</h1>
+  {% endif %}
+  {% if page.tagline %}<p>{{ page.tagline }}</p>{% endif %}
 </div>
 
 {% assign body = content | strip %}

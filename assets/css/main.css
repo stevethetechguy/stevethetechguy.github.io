@@ -74,10 +74,13 @@ a{color:var(--accent);font-weight:700;text-decoration:none}
 
 /* home hero */
 .hero{padding:clamp(34px,7vw,72px) 0 clamp(20px,3vw,30px)}
-.hi{display:inline-block;font-weight:800;font-size:13.5px;letter-spacing:.07em;
+.hi{display:inline-block;font-family:var(--body);font-weight:800;font-size:13.5px;
+  letter-spacing:.07em;
   text-transform:uppercase;color:#fff;background:var(--c1);
   padding:6px 15px;border-radius:999px;transform:rotate(-1.8deg)}
 .hero h1{font-size:clamp(46px,10.5vw,104px);line-height:.92;margin:20px 0 0}
+.hero h1.hi{font-size:13.5px;line-height:1.6;margin:0;font-variation-settings:normal;
+  letter-spacing:.07em}
 .hero h1 em{font-style:normal;color:var(--c6)}
 .hero p{font-size:clamp(18px,2.4vw,23px);color:var(--ink2);max-width:40ch;margin:16px 0 0;
   font-weight:600}
