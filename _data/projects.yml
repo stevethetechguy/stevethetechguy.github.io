@@ -7,10 +7,8 @@
 #   link:     where it lives
 #   tags:     [a, few, words]            (optional)
 #   year:     2026                       (optional)
-#   featured: true                       also puts it on the home page
 
 - name: Personal Site
   what: A personal site for my ideas and thoughts.
   image: /assets/img/site-home.png
   link: https://github.com/stevethetechguy/stevethetechguy.github.io
-  featured: true
