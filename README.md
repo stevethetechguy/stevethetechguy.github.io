@@ -12,7 +12,6 @@ You never need to touch HTML. Everything lives in markdown or YAML.
 | Write an essay | New file in `_posts/` named `YYYY-MM-DD-title.md` |
 | Add a project | `_data/projects.yml` |
 | Add a book | `_data/reading.yml` |
-| Change my bio | `about.md` |
 | Change my name, tagline, email | `_config.yml` |
 
 ### Writing an essay

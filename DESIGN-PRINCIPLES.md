@@ -62,7 +62,7 @@ a tilt is not motion.
 ## Content model
 
 Nothing is written in HTML. Essays are markdown in `_posts/`, projects and books are YAML in
-`_data/`, the bio is `about.md`, and identity is `_config.yml`.
+`_data/`, and identity is `_config.yml`.
 
 **A section with no data renders a designed empty state that says exactly which file to edit** —
 never "coming soon", never a placeholder entry.
