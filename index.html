@@ -3,221 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steve Burgos - Almanac</title>
-<meta name="description" content="Steve Burgos. Backend engineering in Java and Spring, machine learning applied to markets. Projects, reading, and record - reissued every season.">
+<title>Steve Burgos - Seasons</title>
+<meta name="description" content="Steve Burgos in Dallas. Every season I pick something to work on. Right now it is building projects.">
 <meta name="author" content="Steve Burgos">
 <link rel="canonical" href="https://stevethetechguy.github.io/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Steve Burgos - Almanac">
-<meta property="og:description" content="Backend engineering in Java and Spring, machine learning applied to markets. Projects, reading, and record - reissued every season.">
+<meta property="og:title" content="Steve Burgos - Seasons">
+<meta property="og:description" content="Every season I pick something to work on. Right now it is building projects.">
 <meta property="og:url" content="https://stevethetechguy.github.io/">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:wght@400;500;700&family=Azeret+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..900,0..100,0..1&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
 :root{
-  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --sans:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'Azeret Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-  --ground:#EFEBE1; --surface:#FBF8F1; --ink:#1A1608; --ink2:#4B4633;
-  --line:#D5CEBB; --accent:#0B5F79; --accent2:#A84614;
+  --disp:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r:18px; --bw:2.5px;
+  --ground:#FFF7E0;--surface:#FFFCF2;--ink:#2A1D05;--ink2:#5C4718;
+  --line:#EEDCA8;--accent:#08698F;--accent2:#C13A22;
 }
-:root[data-season="spring"]{--ground:#E9EDE4;--surface:#F7F9F4;--ink:#101A0F;--ink2:#3D4C39;
-  --line:#C7D1BE;--accent:#2A6238;--accent2:#9E4468}
-:root[data-season="summer"]{--ground:#EFEBE1;--surface:#FBF8F1;--ink:#1A1608;--ink2:#4B4633;
-  --line:#D5CEBB;--accent:#0B5F79;--accent2:#A84614}
-:root[data-season="autumn"]{--ground:#EDE7DD;--surface:#F6F2EA;--ink:#201509;--ink2:#4E3F2C;
-  --line:#CFC2AD;--accent:#8C2F1E;--accent2:#7A5A0F}
-:root[data-season="winter"]{--ground:#E6EAEE;--surface:#F5F8FA;--ink:#0D1520;--ink2:#3A4859;
-  --line:#C0CBD6;--accent:#1F4E79;--accent2:#4A6376}
+:root[data-season="autumn"]{--ground:#FFF3E2;--surface:#FFFBF4;--ink:#33190A;--ink2:#6A4326;
+  --line:#E8CFAE;--accent:#B44A0C;--accent2:#8A2F63}
+:root[data-season="winter"]{--ground:#EDF4F9;--surface:#FAFCFE;--ink:#0B1A2A;--ink2:#37506B;
+  --line:#C6DAE8;--accent:#0A6E96;--accent2:#B32F42}
+:root[data-season="spring"]{--ground:#EFF8EC;--surface:#FAFDF8;--ink:#0E1F12;--ink2:#375A3F;
+  --line:#C9E2C6;--accent:#1E7A45;--accent2:#C0246F}
+:root[data-season="summer"]{--ground:#FFF7E0;--surface:#FFFCF2;--ink:#2A1D05;--ink2:#5C4718;
+  --line:#EEDCA8;--accent:#08698F;--accent2:#C13A22}
 @media (prefers-color-scheme:dark){
-  :root:not([data-mode="light"]){--ground:#0E1216;--surface:#171D22;--ink:#E9E7DC;--ink2:#B3AF9E;
-    --line:#28303A;--accent:#5CBFDD;--accent2:#EC8F5A}
-  :root:not([data-mode="light"])[data-season="spring"]{--ground:#0A100A;--surface:#131B12;
-    --ink:#DFE8DA;--ink2:#A3B59C;--line:#232E20;--accent:#6DBE7C;--accent2:#E894AF}
-  :root:not([data-mode="light"])[data-season="summer"]{--ground:#0E1216;--surface:#171D22;
-    --ink:#E9E7DC;--ink2:#B3AF9E;--line:#28303A;--accent:#5CBFDD;--accent2:#EC8F5A}
-  :root:not([data-mode="light"])[data-season="autumn"]{--ground:#16100A;--surface:#1F1811;
-    --ink:#EDE3D4;--ink2:#BBA98F;--line:#362B1E;--accent:#E08765;--accent2:#D9A43C}
-  :root:not([data-mode="light"])[data-season="winter"]{--ground:#080D14;--surface:#111A24;
-    --ink:#DCE6EF;--ink2:#9DAFC1;--line:#23303D;--accent:#7FB4DE;--accent2:#A9C8E0}
+ :root:not([data-mode="light"]){--ground:#141007;--surface:#221B0D;--ink:#FFF3D6;--ink2:#D4C193;
+   --line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
+ :root:not([data-mode="light"])[data-season="autumn"]{--ground:#1C1108;--surface:#2A1B0F;
+   --ink:#FFEEDA;--ink2:#D6B692;--line:#463016;--accent:#FF9F4A;--accent2:#F58CC4}
+ :root:not([data-mode="light"])[data-season="winter"]{--ground:#07131E;--surface:#0F2030;
+   --ink:#E1EEF8;--ink2:#A6C0D6;--line:#1E3446;--accent:#5FC2E8;--accent2:#FF8A9B}
+ :root:not([data-mode="light"])[data-season="spring"]{--ground:#08130C;--surface:#102015;
+   --ink:#E0F2DF;--ink2:#A5C7AA;--line:#1E3524;--accent:#5FD183;--accent2:#FF7FB8}
+ :root:not([data-mode="light"])[data-season="summer"]{--ground:#141007;--surface:#221B0D;
+   --ink:#FFF3D6;--ink2:#D4C193;--line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
 }
-:root[data-mode="dark"]{--ground:#0E1216;--surface:#171D22;--ink:#E9E7DC;--ink2:#B3AF9E;
-  --line:#28303A;--accent:#5CBFDD;--accent2:#EC8F5A}
-:root[data-mode="dark"][data-season="spring"]{--ground:#0A100A;--surface:#131B12;--ink:#DFE8DA;
-  --ink2:#A3B59C;--line:#232E20;--accent:#6DBE7C;--accent2:#E894AF}
-:root[data-mode="dark"][data-season="autumn"]{--ground:#16100A;--surface:#1F1811;--ink:#EDE3D4;
-  --ink2:#BBA98F;--line:#362B1E;--accent:#E08765;--accent2:#D9A43C}
-:root[data-mode="dark"][data-season="winter"]{--ground:#080D14;--surface:#111A24;--ink:#DCE6EF;
-  --ink2:#9DAFC1;--line:#23303D;--accent:#7FB4DE;--accent2:#A9C8E0}
+:root[data-mode="dark"]{--ground:#141007;--surface:#221B0D;--ink:#FFF3D6;--ink2:#D4C193;
+  --line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
+:root[data-mode="dark"][data-season="autumn"]{--ground:#1C1108;--surface:#2A1B0F;--ink:#FFEEDA;
+  --ink2:#D6B692;--line:#463016;--accent:#FF9F4A;--accent2:#F58CC4}
+:root[data-mode="dark"][data-season="winter"]{--ground:#07131E;--surface:#0F2030;--ink:#E1EEF8;
+  --ink2:#A6C0D6;--line:#1E3446;--accent:#5FC2E8;--accent2:#FF8A9B}
+:root[data-mode="dark"][data-season="spring"]{--ground:#08130C;--surface:#102015;--ink:#E0F2DF;
+  --ink2:#A5C7AA;--line:#1E3524;--accent:#5FD183;--accent2:#FF7FB8}
 
 *{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
-  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
-  transition:background .3s ease,color .3s ease}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;
-  transition:border-color .12s,color .12s}
-a:hover{border-bottom-color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:1100px;margin:0 auto;padding:0 clamp(18px,4vw,40px) 90px}
-.col{max-width:680px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  transition:background .35s ease,color .35s ease}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;
+  font-variation-settings:'SOFT' 70,'WONK' 1;letter-spacing:-.01em;text-wrap:balance}
+a{color:var(--accent);font-weight:700;text-decoration:none;
+  box-shadow:inset 0 -.14em 0 var(--accent);transition:box-shadow .15s,color .15s}
+a:hover{box-shadow:inset 0 -.55em 0 var(--accent);color:var(--surface)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:6px}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(18px,4vw,32px) 90px}
 
 /* masthead */
-header{padding:clamp(30px,6vw,64px) 0 clamp(22px,3.5vw,34px);border-bottom:2px solid var(--ink)}
-.ed{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink2);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.ed b{color:var(--accent);font-weight:600}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,10vw,104px);line-height:.94;
-  letter-spacing:-.02em;margin:14px 0 0}
-.tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.8vw,28px);color:var(--ink2);
-  margin-top:10px;line-height:1.3}
-.mast-b{display:flex;gap:clamp(14px,3vw,30px);flex-wrap:wrap;margin-top:20px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink2)}
+header{padding:clamp(34px,7vw,72px) 0 clamp(20px,3vw,30px)}
+.hi{display:inline-block;font-weight:800;font-size:14px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--surface);background:var(--accent2);
+  padding:6px 14px;border-radius:999px;transform:rotate(-1.6deg)}
+h1{font-size:clamp(48px,11vw,110px);line-height:.9;margin:18px 0 0}
+.tag{font-size:clamp(18px,2.4vw,23px);color:var(--ink2);max-width:36ch;margin:16px 0 0;
+  font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.chip{display:inline-block;font-weight:800;font-size:15px;padding:9px 18px;
+  border:var(--bw) solid var(--ink);border-radius:999px;background:var(--surface);
+  color:var(--ink);box-shadow:3px 3px 0 var(--ink);
+  transition:transform .12s,box-shadow .12s}
+.chip:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);color:var(--ink)}
 
-/* sections */
-section{padding-top:clamp(38px,6vw,66px)}
-.sh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);
-  padding-bottom:7px;margin-bottom:22px}
-.sh-n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink2);flex:none}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(25px,3.6vw,36px);letter-spacing:-.01em;
-  margin:0;flex:none;line-height:1.1}
-.sh-r{flex:1;height:1px;background:var(--line);align-self:center}
-.sh-t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink2);flex:none}
-p{margin:0 0 14px}
+/* section heads */
+section{padding-top:clamp(38px,6vw,60px)}
+h2{font-size:clamp(28px,4.4vw,40px);margin-bottom:6px}
+.sub{color:var(--ink2);font-weight:600;margin:0 0 22px;font-size:16px}
 
-/* chapter */
-.chap{border-left:3px solid var(--accent);padding:4px 0 4px clamp(16px,2.6vw,26px)}
-.chap-t{font-family:var(--serif);font-size:clamp(30px,5.4vw,54px);line-height:1.04;
-  letter-spacing:-.015em;color:var(--ink)}
-.chap-s{font-family:var(--sans);font-size:clamp(16.5px,2vw,19px);line-height:1.55;
-  color:var(--ink2);max-width:60ch;margin:14px 0 0}
-.chap-m{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;font-family:var(--mono);
-  font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink2)}
-.eds{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line);margin-top:clamp(24px,4vw,38px)}
-.edn{background:var(--surface);padding:13px 15px;opacity:.5}
-.edn.on{opacity:1;background:var(--surface);box-shadow:inset 3px 0 0 var(--accent)}
-.edn-s{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink2);margin-bottom:5px}
-.edn-t{font-family:var(--serif);font-size:19px;line-height:1.2;color:var(--ink)}
-.edn:not(.on) .edn-t{font-style:italic;color:var(--ink2)}
+/* the season card */
+.card{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
+  box-shadow:7px 7px 0 var(--accent);padding:clamp(22px,4vw,40px);transform:rotate(-.5deg)}
+.card .lab{display:inline-block;font-weight:800;font-size:12.5px;letter-spacing:.11em;
+  text-transform:uppercase;background:var(--ink);color:var(--surface);
+  padding:5px 12px;border-radius:999px}
+.card h3{font-size:clamp(30px,5.6vw,56px);line-height:1.02;margin:16px 0 0}
+.card p{font-size:clamp(17px,2.1vw,20px);color:var(--ink2);max-width:52ch;margin:14px 0 0;
+  font-weight:600}
+.card .when{margin-top:20px;font-weight:800;font-size:14px;color:var(--accent);
+  letter-spacing:.03em}
 
-/* entries */
-.entries{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line)}
-.en{background:var(--surface);padding:15px 17px;display:grid;
-  grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:baseline}
-@media(max-width:620px){.en{grid-template-columns:1fr}}
-.en-t{font-family:var(--sans);font-weight:700;font-size:16.5px;color:var(--ink);
-  letter-spacing:-.005em}
-.en-t a{color:var(--ink)} .en-t a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.en-d{font-size:15px;color:var(--ink2);grid-column:1/-1;margin:0;max-width:66ch}
-.en-m{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--ink2);white-space:nowrap;display:flex;gap:11px;flex-wrap:wrap}
-.en-m .lang{color:var(--accent2);font-weight:600}
+/* editions */
+.eds{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:14px;
+  margin-top:clamp(26px,4vw,40px)}
+.edn{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
+  padding:15px 17px;box-shadow:4px 4px 0 var(--line)}
+.edn.on{box-shadow:4px 4px 0 var(--accent2);transform:rotate(.7deg)}
+.edn-s{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink2);margin-bottom:6px}
+.edn-t{font-family:var(--disp);font-weight:700;font-size:21px;line-height:1.15;
+  font-variation-settings:'SOFT' 70,'WONK' 1}
+.edn:not(.on) .edn-t{color:var(--ink2);font-style:italic;font-weight:500}
 
-/* season control */
-.ctl{position:fixed;right:12px;bottom:12px;z-index:9;display:flex;gap:1px;background:var(--line);
-  border:1px solid var(--line)}
-.ctl button{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
-  padding:8px 10px;border:0;background:var(--surface);color:var(--ink2);cursor:pointer;
-  transition:background .12s,color .12s}
-.ctl button:hover{color:var(--ink)}
-.ctl button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+/* entry cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:16px}
+.item{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
+  padding:18px 19px;box-shadow:4px 4px 0 var(--ink);
+  transition:transform .12s,box-shadow .12s}
+.item:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--accent)}
+.item h3{font-size:21px;line-height:1.2}
+.item h3 a{box-shadow:none;color:var(--ink)}
+.item h3 a:hover{box-shadow:none;color:var(--accent)}
+.item p{margin:9px 0 0;color:var(--ink2);font-size:15.5px;font-weight:600}
+.item .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-weight:800;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;background:var(--line);color:var(--ink2)}
 
-footer{margin-top:clamp(40px,6vw,72px);border-top:2px solid var(--ink);padding-top:15px;
+/* season switcher */
+.pick{position:fixed;right:14px;bottom:14px;z-index:9;display:flex;gap:7px}
+.pick button{font-family:var(--body);font-weight:800;font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;padding:9px 12px;border:var(--bw) solid var(--ink);
+  border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
+.pick button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.pick button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+
+footer{margin-top:clamp(46px,7vw,80px);padding-top:20px;border-top:var(--bw) dashed var(--line);
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink2)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  font-weight:700;font-size:14.5px;color:var(--ink2)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <div class="ed" id="ed"></div>
+  <span class="hi" id="hi"></span>
   <h1 id="nm"></h1>
-  <div class="tag" id="tg"></div>
-  <div class="mast-b" id="mb"></div>
+  <p class="tag" id="tg"></p>
+  <div class="links" id="lk"></div>
 </header>
 
-<section id="s-cel">
-  <div class="sh"><span class="sh-n">I</span><h2>This season</h2><span class="sh-r"></span>
-    <span class="sh-t">what I am working on</span></div>
-  <div class="chap">
-    <div class="chap-t" id="ch-title"></div>
-    <p class="chap-s" id="ch-state"></p>
-    <div class="chap-m" id="ch-meta"></div>
+<section>
+  <h2>What I'm on right now</h2>
+  <p class="sub">Every season I pick one thing and go at it.</p>
+  <div class="card">
+    <span class="lab" id="ch-lab"></span>
+    <h3 id="ch-title"></h3>
+    <p id="ch-state"></p>
+    <div class="when" id="ch-when"></div>
   </div>
   <div class="eds" id="eds"></div>
 </section>
 
+<section id="s-proj" hidden>
+  <h2>Projects</h2><p class="sub">Things I've built and want you to look at.</p>
+  <div class="grid" id="proj"></div>
+</section>
+
 <section id="s-now" hidden>
-  <div class="sh"><span class="sh-n">II</span><h2>Now</h2><span class="sh-r"></span>
-    <span class="sh-t" id="now-t"></span></div>
-  <div class="entries" id="now"></div>
+  <h2>On the nightstand</h2><p class="sub">What I'm reading at the moment.</p>
+  <div class="grid" id="now"></div>
 </section>
 
 <section id="s-read" hidden>
-  <div class="sh"><span class="sh-n">III</span><h2>Reading</h2><span class="sh-r"></span>
-    <span class="sh-t">by edition</span></div>
+  <h2>Reading by season</h2><p class="sub">A list for each chapter.</p>
   <div id="read"></div>
 </section>
 
 <section id="s-work" hidden>
-  <div class="sh"><span class="sh-n">IV</span><h2>Work</h2><span class="sh-r"></span>
-    <span class="sh-t" id="work-t"></span></div>
-  <div class="entries" id="work"></div>
+  <h2>Where I've worked</h2><p class="sub"></p>
+  <div class="grid" id="work"></div>
 </section>
 
 <section id="s-edu" hidden>
-  <div class="sh"><span class="sh-n">V</span><h2>Education</h2><span class="sh-r"></span>
-    <span class="sh-t"></span></div>
-  <div class="entries" id="edu"></div>
-</section>
-
-<section id="s-rep">
-  <div class="sh"><span class="sh-n">VI</span><h2>The record</h2><span class="sh-r"></span>
-    <span class="sh-t" id="rep-t"></span></div>
-  <div class="entries" id="rep"></div>
+  <h2>School</h2><p class="sub"></p>
+  <div class="grid" id="edu"></div>
 </section>
 
 <footer><span id="ft"></span><span id="ft2"></span></footer>
 </div>
-
-<div class="ctl" id="ctl" role="group" aria-label="Preview a season"></div>
+<div class="pick" id="pick" role="group" aria-label="Preview a season"></div>
 
 <script>
-/* ------------------------------------------------------------------
-   All content lives here. A section with no data does not render.
-   ------------------------------------------------------------------ */
+/* =========================================================================
+   Everything on this site comes from here. Empty list = section disappears.
+   ========================================================================= */
 var DATA={
   name:"Steve Burgos",
-  tagline:"I build backend services in Java and Spring, and I am working through machine learning applied to markets.",
+  greeting:"Hi, I'm Steve",
+  tagline:"I build things with Java, Spring and Python, out of Dallas.",
   location:"Dallas, Texas",
   github:"stevethetechguy",
   email:"burgossteve95@gmail.com",
 
-  /* The current chapter. Change these five lines and the whole site reissues. */
+  /* The season you're in. Change these and the whole site reissues. */
   chapter:{
     season:"autumn", year:2026,
-    title:"The Building Season",
-    statement:"Twelve repositories, and this season is for turning them into finished things. Less starting, more shipping.",
-    from:"September 2026", to:"December 2026"
+    label:"This season",
+    title:"Building things and finishing them",
+    statement:"I'm spending this one shipping projects instead of starting them. Fewer tabs, more finished repos.",
+    when:"September - December 2026"
   },
 
-  /* Past and planned chapters. Newest first. Leave a season out until it has a subject. */
+  /* Seasons ahead. Give one a title when you know what it'll be. */
   editions:[
-    {season:"autumn", year:2026, title:"The Building Season", state:"current"},
+    {season:"autumn", year:2026, title:"Building things", state:"current"},
     {season:"winter", year:2026, title:null, state:"unwritten"},
     {season:"spring", year:2027, title:null, state:"unwritten"},
     {season:"summer", year:2027, title:null, state:"unwritten"}
   ],
 
-  /* --- TO FILL --- currently reading; {title, author, note} */
+  /* --- YOU PICK THESE --- {name, what, link, tags:[]} */
+  projects:[],
+
+  /* --- TO FILL --- {title, author, note} */
   now:[],
 
   /* --- TO FILL --- {season, year, books:[{title, author, note}]} */
@@ -227,136 +229,77 @@ var DATA={
   work:[],
 
   /* --- TO FILL --- {credential, school, from, to, note} */
-  education:[],
-
-  /* real, pulled from the GitHub API 2026-09-04 */
-  repos:[
-    {n:"financeapp",              lang:null,               d:"", up:"2026-06-22"},
-    {n:"HotelChatbot",            lang:"Java",             d:"", up:"2026-02-19"},
-    {n:"Ticketing-Gateway-System",lang:"JavaScript",       d:"", up:"2026-02-13"},
-    {n:"Reinforcement-Learning-for-Finance", lang:null,    d:"", up:"2025-01-01"},
-    {n:"AI_and_Machine_Learning_for_Coders", lang:"Python",
-     d:"My walk through of the book AI and Machine Learning for Coders: A Programmer\u2019s Guide to Artificial Intelligence", up:"2024-12-08"},
-    {n:"NaturalLangauageProcessingAssignments", lang:"Jupyter Notebook", d:"", up:"2024-09-05"},
-    {n:"leetcode_practice",       lang:null, d:"Repository for me to think about leetcode problems", up:"2024-05-26"},
-    {n:"stevethetechguy.github.io", lang:"HTML", d:"This site.", up:"2026-09-04"}
-  ]
+  education:[]
 };
 
-/* ---------- season model: exact 2026 instants, UTC ---------- */
-var EXACT={2026:{spring:"2026-03-20T14:46:00Z",summer:"2026-06-21T08:25:00Z",
-                 autumn:"2026-09-23T00:05:00Z",winter:"2026-12-21T20:50:00Z"}};
-function marks(y){
-  if(EXACT[y])return{spring:new Date(EXACT[y].spring),summer:new Date(EXACT[y].summer),
-                     autumn:new Date(EXACT[y].autumn),winter:new Date(EXACT[y].winter)};
-  /* fallback: conventional dates. Refresh EXACT annually - this drifts up to a day. */
-  return{spring:new Date(Date.UTC(y,2,20,14,46)),summer:new Date(Date.UTC(y,5,21,8,25)),
-         autumn:new Date(Date.UTC(y,8,22,0,5)),winter:new Date(Date.UTC(y,11,21,20,50))};
-}
-var NAMES={spring:"Spring",summer:"Summer",autumn:"Autumn",winter:"Winter"};
-var EVENT={spring:"March equinox",summer:"June solstice",autumn:"September equinox",
-           winter:"December solstice"};
-function seasonAt(d){
-  var y=d.getUTCFullYear(),m=marks(y);
-  if(d<m.spring)return{s:"winter",started:marks(y-1).winter,next:m.spring,nextS:"spring"};
-  if(d<m.summer)return{s:"spring",started:m.spring,next:m.summer,nextS:"summer"};
-  if(d<m.autumn)return{s:"summer",started:m.summer,next:m.autumn,nextS:"autumn"};
-  if(d<m.winter)return{s:"autumn",started:m.autumn,next:m.winter,nextS:"winter"};
-  return{s:"winter",started:m.winter,next:marks(y+1).spring,nextS:"spring"};
-}
-function fmt(d){return d.toLocaleString(undefined,{month:"long",day:"numeric",year:"numeric",
-  hour:"numeric",minute:"2-digit"});}
-function days(a,b){return Math.ceil((b-a)/86400000);}
-
-var now=new Date();
+var NAMES={spring:"Spring",summer:"Summer",autumn:"Fall",winter:"Winter"};
 var CH=DATA.chapter;
 var q=new URLSearchParams(location.search).get("season");
 var shown=(q&&NAMES[q])?q:CH.season;
 document.documentElement.setAttribute("data-season",shown);
 
-/* ---------- masthead ---------- */
-document.getElementById("ed").innerHTML=
-  '<span><b>'+NAMES[CH.season]+' '+CH.year+'</b></span><span>'+CH.title+'</span>'+
-  '<span>'+DATA.location+'</span>'+(shown!==CH.season?'<span>preview</span>':'');
+document.getElementById("hi").textContent=DATA.greeting;
 document.getElementById("nm").textContent=DATA.name;
 document.getElementById("tg").textContent=DATA.tagline;
-document.getElementById("mb").innerHTML=
-  '<a href="https://github.com/'+DATA.github+'">github.com/'+DATA.github+'</a>'+
-  '<a href="mailto:'+DATA.email+'">'+DATA.email+'</a>';
+document.getElementById("lk").innerHTML=
+  '<a class="chip" href="https://github.com/'+DATA.github+'">GitHub</a>'+
+  '<a class="chip" href="mailto:'+DATA.email+'">Email me</a>';
 
-/* ---------- celestial ---------- */
-var m=marks(CH.year), eq=m[CH.season];
+document.getElementById("ch-lab").textContent=CH.label+" - "+NAMES[CH.season]+" "+CH.year;
 document.getElementById("ch-title").textContent=CH.title;
 document.getElementById("ch-state").textContent=CH.statement;
-document.getElementById("ch-meta").innerHTML=
-  '<span>'+CH.from+' &ndash; '+CH.to+'</span>'+
-  '<span>'+NAMES[CH.season]+' begins '+eq.toLocaleString(undefined,
-    {month:"long",day:"numeric",hour:"numeric",minute:"2-digit"})+'</span>';
+document.getElementById("ch-when").textContent=CH.when;
 
 document.getElementById("eds").innerHTML=DATA.editions.map(function(e){
-  var on=e.state==="current";
-  return '<div class="edn'+(on?" on":"")+'"><div class="edn-s">'+NAMES[e.season]+' '+e.year+'</div>'+
-    '<div class="edn-t">'+(e.title||"unwritten")+'</div></div>';
+  return '<div class="edn'+(e.state==="current"?" on":"")+'">'+
+    '<div class="edn-s">'+NAMES[e.season]+' '+e.year+'</div>'+
+    '<div class="edn-t">'+(e.title||"not written yet")+'</div></div>';
 }).join("");
 
-/* ---------- render helpers ---------- */
-function entry(t,meta,desc,href){
-  return '<div class="en"><div class="en-t">'+(href?'<a href="'+href+'">'+t+'</a>':t)+'</div>'+
-    '<div class="en-m">'+meta+'</div>'+(desc?'<p class="en-d">'+desc+'</p>':'')+'</div>';
+function card(title,body,meta,href){
+  return '<div class="item"><h3>'+(href?'<a href="'+href+'">'+title+'</a>':title)+'</h3>'+
+    (body?'<p>'+body+'</p>':'')+
+    (meta&&meta.length?'<div class="meta">'+meta.map(function(t){
+      return '<span class="pill">'+t+'</span>';}).join("")+'</div>':'')+'</div>';
 }
-function show(id,html,count,label){
-  if(!html)return;
+function show(id,html){ if(!html)return;
   document.getElementById("s-"+id).hidden=false;
-  document.getElementById(id).innerHTML=html;
-  var t=document.getElementById(id+"-t"); if(t&&label)t.textContent=label;
-}
+  document.getElementById(id).innerHTML=html; }
 
+show("proj", DATA.projects.map(function(p){
+  return card(p.name,p.what,p.tags,p.link);}).join(""));
 show("now", DATA.now.map(function(b){
-  return entry(b.title, '<span>'+(b.author||"")+'</span>', b.note||"");}).join(""),
-  DATA.now.length, "currently reading");
+  return card(b.title,b.note,b.author?[b.author]:null);}).join(""));
+show("work", DATA.work.map(function(w){
+  return card(w.role,w.note,[w.org,w.from+" - "+(w.to||"now")]);}).join(""));
+show("edu", DATA.education.map(function(e){
+  return card(e.credential,e.note,[e.school,e.from+" - "+(e.to||"")]);}).join(""));
 
 if(DATA.reading.length){
   document.getElementById("s-read").hidden=false;
   document.getElementById("read").innerHTML=DATA.reading.map(function(ed){
-    return '<div class="sh" style="margin-top:26px"><span class="sh-n">'+
-      NAMES[ed.season]+' '+ed.year+'</span><span class="sh-r"></span>'+
-      '<span class="sh-t">'+ed.books.length+' titles</span></div>'+
-      '<div class="entries">'+ed.books.map(function(b){
-        return entry(b.title,'<span>'+(b.author||"")+'</span>',b.note||"");}).join("")+'</div>';
+    return '<h3 style="margin:26px 0 12px;font-size:22px">'+NAMES[ed.season]+' '+ed.year+'</h3>'+
+      '<div class="grid">'+ed.books.map(function(b){
+        return card(b.title,b.note,b.author?[b.author]:null);}).join("")+'</div>';
   }).join("");
 }
 
-show("work", DATA.work.map(function(w){
-  return entry(w.role+' &middot; '+w.org,'<span>'+w.from+' &ndash; '+(w.to||"present")+'</span>',
-    w.note||"");}).join(""), DATA.work.length, DATA.work.length+" positions");
-
-show("edu", DATA.education.map(function(e){
-  return entry(e.credential+' &middot; '+e.school,
-    '<span>'+e.from+' &ndash; '+(e.to||"")+'</span>', e.note||"");}).join(""));
-
-document.getElementById("rep").innerHTML=DATA.repos.map(function(r){
-  var m='<span>updated '+r.up+'</span>'+(r.lang?'<span class="lang">'+r.lang+'</span>':'');
-  return entry(r.n,m,r.d,"https://github.com/"+DATA.github+"/"+r.n);
-}).join("");
-document.getElementById("rep-t").textContent=DATA.repos.length+" of 12 public";
-
 document.getElementById("ft").textContent=DATA.name+" / "+DATA.location;
-document.getElementById("ft2").innerHTML='<a href="https://github.com/'+DATA.github+'">GitHub</a>';
+document.getElementById("ft2").innerHTML='<a href="https://github.com/'+DATA.github+'">'+
+  'github.com/'+DATA.github+'</a>';
 
-/* ---------- season preview ---------- */
-var ctl=document.getElementById("ctl");
+var pick=document.getElementById("pick");
 ["spring","summer","autumn","winter"].forEach(function(s){
   var b=document.createElement("button");
-  b.textContent=s.slice(0,3); b.title="Preview "+NAMES[s];
+  b.textContent=NAMES[s]; b.title="Preview "+NAMES[s];
   b.setAttribute("aria-pressed", s===shown?"true":"false");
   b.addEventListener("click",function(){
     document.documentElement.setAttribute("data-season",s);
-    Array.prototype.forEach.call(ctl.children,function(x){x.setAttribute("aria-pressed","false")});
+    Array.prototype.forEach.call(pick.children,function(x){
+      x.setAttribute("aria-pressed","false")});
     b.setAttribute("aria-pressed","true");
-    var e=document.getElementById("ed").firstChild;
-    if(e)e.innerHTML='<b>'+NAMES[s]+' edition</b>';
   });
-  ctl.appendChild(b);
+  pick.appendChild(b);
 });
 </script>
 </body>
