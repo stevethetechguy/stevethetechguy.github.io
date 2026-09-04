@@ -5,12 +5,23 @@ blurb: Things I've built. Some finished, some still cooking.
 permalink: /projects/
 ---
 {% if site.data.projects and site.data.projects.size > 0 %}
-<div class="grid">
+<div class="grid projects">
   {% for p in site.data.projects %}
-  <article class="card">
-    <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
-    {% if p.what %}<p>{{ p.what }}</p>{% endif %}
-    {% if p.tags %}<div class="meta">{% for t in p.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>{% endif %}
+  <article class="card{% if p.image %} has-cover{% endif %}">
+    {% if p.image %}
+    <a class="cover" href="{{ p.link | default: '#' }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ p.image | relative_url }}" alt="Screenshot of {{ p.name }}" loading="lazy">
+    </a>
+    {% endif %}
+    <div class="card-body">
+      <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+      {% if p.what %}<p class="lede">{{ p.what }}</p>{% endif %}
+      {% if p.about %}<p>{{ p.about }}</p>{% endif %}
+      <div class="meta">
+        {% if p.year %}<span class="pill">{{ p.year }}</span>{% endif %}
+        {% for t in p.tags %}<span class="pill">{{ t }}</span>{% endfor %}
+      </div>
+    </div>
   </article>
   {% endfor %}
 </div>

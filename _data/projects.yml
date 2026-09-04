@@ -1,8 +1,25 @@
-# Your portfolio. Add a project, push, it appears.
-# Delete these comments and uncomment the block below to start.
+# Your portfolio. Add a project, push, it shows up.
 #
-# - name: Ticketing Gateway System
-#   what: One sentence on what it does and why you built it.
-#   link: https://github.com/stevethetechguy/Ticketing-Gateway-System
-#   tags: [Java, Spring, Microservices]
-#   featured: true          # featured projects also show on the home page
+#   name:     what it's called
+#   what:     one line, shown on the card
+#   about:    a longer paragraph, shown on the Projects page
+#   image:    /assets/img/something.png   (optional - a designed cover is used if omitted)
+#   link:     where it lives
+#   tags:     [a, few, words]
+#   year:     2026
+#   featured: true    also puts it on the home page
+
+- name: This website
+  what: A personal site built from scratch - no template, no theme.
+  about: >
+    I wanted somewhere to put my work that wasn't a GitHub profile page, so I built one.
+    It runs on Jekyll and GitHub Pages, which means essays are just markdown files I push
+    and everything else is YAML - I never have to open an HTML file to add something.
+    The design is mine: a box of eight crayon colours that rotate across cards, thick
+    outlines, and solid offset shadows instead of blurred ones. Every colour is
+    contrast-checked so the text is readable in both light and dark.
+  image: /assets/img/site-home.png
+  link: https://github.com/stevethetechguy/stevethetechguy.github.io
+  tags: [Jekyll, Design, GitHub Pages]
+  year: 2026
+  featured: true

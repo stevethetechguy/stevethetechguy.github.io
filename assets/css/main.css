@@ -148,6 +148,18 @@ section{padding:clamp(30px,5vw,54px) 0 0}
   font-size:clamp(19px,2.5vw,24px);color:var(--ink2);margin:0 0 24px;max-width:44ch;
   line-height:1.35}
 
+/* project cards with a cover */
+.projects{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.card.has-cover{padding:0;overflow:hidden}
+.card.has-cover .cover{display:block;line-height:0;box-shadow:none}
+.card.has-cover .cover img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;
+  object-position:top center;border-bottom:var(--bw) solid var(--ink);
+  border-radius:0;transition:transform .2s ease}
+.card.has-cover:hover .cover img{transform:scale(1.02)}
+.card-body{padding:18px 20px 20px}
+.card-body .lede{margin-top:0;font-size:16px;color:var(--ink);font-weight:700}
+.card-body p+p{margin-top:9px;font-size:15px;font-weight:600;color:var(--ink2)}
+
 /* empty state */
 .empty{background:var(--surface);border:var(--bw) dashed var(--line);border-radius:var(--r);
   padding:clamp(28px,5vw,48px);text-align:center}
