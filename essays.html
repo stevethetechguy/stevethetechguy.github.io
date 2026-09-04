@@ -1,0 +1,24 @@
+---
+layout: page
+title: Essays
+blurb: Longer thoughts, written down so I actually finish them.
+permalink: /essays/
+---
+{% if site.posts.size > 0 %}
+<div class="rows">
+  {% for post in site.posts %}
+  <article class="row">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <div class="when">{{ post.date | date: "%B %-d, %Y" }}</div>
+    {% if post.blurb %}<p>{{ post.blurb }}</p>{% endif %}
+    {% if post.tags.size > 0 %}<div class="meta">{% for t in post.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+  <h3>The first one is still being written</h3>
+  <p>Essays are markdown files in <code>_posts/</code>, named
+  <code>YYYY-MM-DD-some-title.md</code>. Write one, push it, and it lands here.</p>
+</div>
+{% endif %}

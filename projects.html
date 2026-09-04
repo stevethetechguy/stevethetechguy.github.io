@@ -1,0 +1,23 @@
+---
+layout: page
+title: Projects
+blurb: Things I've built. Some finished, some still cooking.
+permalink: /projects/
+---
+{% if site.data.projects and site.data.projects.size > 0 %}
+<div class="grid">
+  {% for p in site.data.projects %}
+  <article class="card">
+    <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+    {% if p.what %}<p>{{ p.what }}</p>{% endif %}
+    {% if p.tags %}<div class="meta">{% for t in p.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+  <h3>Nothing here yet</h3>
+  <p>Projects come from <code>_data/projects.yml</code>. Add a name, a sentence, and a link,
+  push it, and it shows up here.</p>
+</div>
+{% endif %}

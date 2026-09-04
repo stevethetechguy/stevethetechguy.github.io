@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="author" content="{{ site.author }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..900,0..100,0..1&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <div class="nav-links">
+      {% for item in site.data.nav %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+<main id="main" class="wrap">
+{{ content }}
+</main>
+<footer class="foot">
+  <span>{{ site.author }} &middot; {{ site.location }}</span>
+  <span><a href="https://github.com/{{ site.github_username }}">GitHub</a> &middot;
+        <a href="mailto:{{ site.email }}">Email</a></span>
+</footer>
+</body>
+</html>

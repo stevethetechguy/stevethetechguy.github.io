@@ -1,0 +1,23 @@
+title: Steve Burgos
+tagline: I build things with Java, Spring and Python, out of Dallas.
+description: Steve Burgos - projects, essays, and what I'm reading.
+author: Steve Burgos
+email: burgossteve95@gmail.com
+github_username: stevethetechguy
+location: Dallas, Texas
+
+url: "https://stevethetechguy.github.io"
+baseurl: ""
+
+# Essays live at /essays/<title>/
+permalink: /essays/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - DESIGN-PRINCIPLES.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock

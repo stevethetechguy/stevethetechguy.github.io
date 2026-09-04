@@ -1,0 +1,7 @@
+# What you're reading. `current: true` puts it in the "right now" row.
+#
+# - title: The Pragmatic Programmer
+#   author: Hunt and Thomas
+#   status: current         # current | finished | queued
+#   note: One line on why you picked it up.
+#   finished: 2026-08

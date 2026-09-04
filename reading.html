@@ -1,0 +1,45 @@
+---
+layout: page
+title: Reading
+blurb: What I'm reading, what I finished, and what's waiting.
+permalink: /reading/
+---
+{% if site.data.reading and site.data.reading.size > 0 %}
+  {% assign current = site.data.reading | where: "status", "current" %}
+  {% assign finished = site.data.reading | where: "status", "finished" %}
+  {% assign queued = site.data.reading | where: "status", "queued" %}
+
+  {% if current.size > 0 %}
+  <section><div class="sh"><h2>Right now</h2></div><div class="grid">
+    {% for b in current %}<article class="card"><h3>{{ b.title }}</h3>
+      {% if b.note %}<p>{{ b.note }}</p>{% endif %}
+      <div class="meta">{% if b.author %}<span class="pill">{{ b.author }}</span>{% endif %}</div>
+    </article>{% endfor %}
+  </div></section>
+  {% endif %}
+
+  {% if finished.size > 0 %}
+  <section><div class="sh"><h2>Finished</h2></div><div class="grid">
+    {% for b in finished %}<article class="card"><h3>{{ b.title }}</h3>
+      {% if b.note %}<p>{{ b.note }}</p>{% endif %}
+      {% if b.finished %}<div class="when">{{ b.finished }}</div>{% endif %}
+      <div class="meta">{% if b.author %}<span class="pill">{{ b.author }}</span>{% endif %}</div>
+    </article>{% endfor %}
+  </div></section>
+  {% endif %}
+
+  {% if queued.size > 0 %}
+  <section><div class="sh"><h2>Next up</h2></div><div class="grid">
+    {% for b in queued %}<article class="card"><h3>{{ b.title }}</h3>
+      {% if b.note %}<p>{{ b.note }}</p>{% endif %}
+      <div class="meta">{% if b.author %}<span class="pill">{{ b.author }}</span>{% endif %}</div>
+    </article>{% endfor %}
+  </div></section>
+  {% endif %}
+{% else %}
+<div class="empty">
+  <h3>No books listed yet</h3>
+  <p>The list comes from <code>_data/reading.yml</code>. Each book takes a title, an author,
+  and a <code>status</code> of current, finished, or queued.</p>
+</div>
+{% endif %}

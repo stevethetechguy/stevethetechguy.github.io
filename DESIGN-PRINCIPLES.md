@@ -4,107 +4,93 @@ Source of truth for this site's visual system. `design-lead` reads this first an
 
 ## Organizing idea
 
-**The site is an almanac — one publication that reissues itself every season.**
+**A box of crayons.** Warm paper, thick outlines, solid offset shadows, and eight saturated
+colors that rotate through the page so no two cards in a row are the same. The site should feel
+like something made by hand and enjoyed, not a template filled in.
 
-An almanac is the rare format that is *natively* seasonal: it prints the celestial dates, records
-what happened, and lists what is worth attending to now. That gives the seasonal theming a reason to
-exist beyond decoration, and it gives every section a vocabulary — editions, entries, records,
-observances — instead of the usual portfolio nouns.
-
-The season is not a skin. It is the edition.
-
-## Season model
-
-**Astronomical**, switching on the exact equinox and solstice instant. Verified UTC moments for 2026:
-
-| Transition | Instant (UTC) | Season begins |
-|---|---|---|
-| March equinox | 2026-03-20 14:46 | Spring |
-| June solstice | 2026-06-21 08:25 | Summer |
-| September equinox | 2026-09-23 00:05 | Autumn |
-| December solstice | 2026-12-21 20:50 | Winter |
-
-Instants are stored in UTC and converted by the browser, so the switch is correct in any timezone.
-In Dallas the September equinox lands at 7:05 PM CDT on the 22nd.
-
-Years other than 2026 fall back to conventional dates (Mar 20, Jun 21, Sep 22, Dec 21 at the same
-times). **Refresh the exact table annually** — the fallback drifts by up to a day.
-
-A `?season=` override renders any edition on demand. It never persists and never affects a normal
-visitor.
+Personality is the point. Where a choice is between correct-and-flat or correct-and-fun, take fun.
 
 ## Color
 
-Eight palettes: four seasons, each with a light and a dark rendering of the same hue family. Same
-identity, two grounds — never an inversion. Every text token clears WCAG AA 4.5:1 against both
-`--ground` and `--surface`, verified by calculation.
+One palette, no seasonal switching. Warm paper ground, near-black ink, and a crayon box of eight.
 
-| Season | Light accent | Dark accent | Family | Min ratio |
+| Crayon | Light | Wash | Dark | Wash |
 |---|---|---|---|---|
-| Spring | `#2A6238` moss | `#6DBE7C` | green, blossom pink second | 5.09 |
-| Summer | `#0B5F79` deep sea | `#5CBFDD` | bleached warm ground, cool accent | 4.97 |
-| Autumn | `#8C2F1E` oxblood | `#E08765` | oxblood and dark ochre, never terracotta | 5.18 |
-| Winter | `#1F4E79` slate blue | `#7FB4DE` | cold blue-grey, no warmth | 5.20 |
+| Red | `#C0271C` | `#FCE3E0` | `#FF8A7A` | `#3B1B17` |
+| Orange | `#AE5108` | `#FCEFE0` | `#FFA95C` | `#3B2610` |
+| Gold | `#836400` | `#F6EECC` | `#E8C558` | `#332A0F` |
+| Green | `#157A45` | `#E4F4EA` | `#5CD08D` | `#123020` |
+| Teal | `#0E6E66` | `#D7EFEC` | `#4FD1C5` | `#0F2E2B` |
+| Blue | `#1A5FC0` | `#DFE9FB` | `#7FAEF5` | `#17253F` |
+| Purple | `#6B3AB8` | `#EAE1FA` | `#B79BF0` | `#27204A` |
+| Pink | `#B32268` | `#FADFEB` | `#F58CC4` | `#3A1B2C` |
 
-Seven tokens per palette: `--ground`, `--surface`, `--ink`, `--ink2`, `--line`, `--accent`,
-`--accent2`. Nothing outside that set is ever colored.
+Ground `#FDF5EA` / `#12100D`, surface `#FFFFFF` / `#1C1916`, ink `#1B2220` / `#F3ECE1`.
+
+**All 48 combinations verified at WCAG AA 4.5:1** — every crayon is legible as text on the
+ground, on the surface, and on its own wash, in both themes. Lowest is 4.66.
+
+**How crayons are assigned:** cards and rows take the next crayon from the box by
+`nth-child(8n+k)`, so a grid reads as a spread of color rather than one accent repeated. The
+crayon drives the card's offset shadow, its heading hover, its pills, and its date line. Nav
+links each own a fixed crayon so the active page is always the same color.
 
 ## Type
 
 | Role | Face | Fallback | Treatment |
 |---|---|---|---|
-| Masthead | Instrument Serif 400 | Georgia, serif | Large, tight, high contrast |
-| Section head | Instrument Serif 400 | Georgia, serif | Sentence case |
-| Body | Karla 400/500 | system-ui | 1.6, max 66ch |
-| Data & labels | Azeret Mono 400/600 | ui-monospace | Uppercase, 0.14em tracking, 10–12px |
+| Headings | Fraunces 800 | Georgia, serif | `SOFT 70, WONK 1` — the soft, slightly odd cut |
+| Body & UI | Nunito 400/600/700/800 | system-ui | 1.65, weight 600 for secondary text |
+| Code | ui-monospace | Menlo | Crayon-washed background |
 
-The serif carries the almanac; the grotesque carries the reading; the mono carries anything with a
-number in it. No role ever borrows another's face.
+Fraunces with WONK on is the whole personality of the type. Never turn it off.
 
-## Layout
+## Shape and depth
 
-- Single column, `680px` measure for reading, widening to `1100px` for records and grids
-- Sections separated by a full-width rule and a mono section marker, in almanac fashion
-- Radius `0`. Almanacs are printed, not rounded.
-- Entries are rows with a hanging label, not cards
+- Border `2.5px solid ink` on every raised object. Thick, like a marker outline.
+- Radius `18px` on cards, `999px` on pills and buttons. Nothing sharp.
+- Depth is a **solid offset shadow in the crayon color** — never a blur, never grey.
+- Hover lifts by 3px and deepens the shadow to 8px. Transform and box-shadow only.
+- A couple of elements sit at a slight rotation. Two is charming, ten is a mess.
 
 ## Motion
 
-Almost none. The season change is the only real transition, and it is a repaint, not an animation.
+Hover only, 0.12s, transform and box-shadow. Nothing on load, nothing on scroll.
+`prefers-reduced-motion: reduce` disables every transition — but static rotations stay, because
+a tilt is not motion.
 
-| Element | Property | Duration |
-|---|---|---|
-| Link and row hover | `color`, `background` | 0.12s |
-| Season repaint | CSS custom properties | 0.3s ease |
+## Content model
 
-Nothing on load. Nothing on scroll. `prefers-reduced-motion: reduce` disables all of it.
+Nothing is written in HTML. Essays are markdown in `_posts/`, projects and books are YAML in
+`_data/`, the bio is `about.md`, and identity is `_config.yml`.
+
+**A section with no data renders a designed empty state that says exactly which file to edit** —
+never "coming soon", never a placeholder entry.
 
 ## Voice
 
-First person, plain, no self-promotion adjectives. State the thing, not a claim about the thing.
-An almanac records; it does not sell.
+First person, plain, warm. Contractions are fine. No adjectives applied to myself.
 
 > **Before:** "Passionate full-stack developer with a strong foundation in modern web technologies."
-> **After:** "I build backend services in Java and Spring, and I am working through reinforcement
-> learning applied to markets."
+> **After:** "I build backend services — mostly Java and Spring, with Python when the problem calls for it."
 
-> **Before:** "Check out my awesome projects below!"
-> **After:** "Twelve public repositories. The four below are the ones worth reading."
+> **Before:** "Projects coming soon!"
+> **After:** "Projects come from `_data/projects.yml`. Add a name, a sentence, and a link, push it, and it shows up here."
 
 ## Non-negotiables
 
-- Every content value comes from a single `DATA` object at the top of the script
-- A section with no data **does not render** — never a placeholder, never "coming soon"
-- Every text token verified at 4.5:1 in all eight palettes
-- The page is fully legible at rest, in whichever edition is current
-- Visible focus states; the season override reachable by keyboard
-- Real repository data, pulled from the GitHub API, never hand-invented
+- Every color token declared on bare `:root` before any theme block
+- All 48 crayon/surface combinations verified at 4.5:1 by calculation
+- Visible focus states; a skip link before the nav
+- Empty states name the file to edit
+- Real content only — no lorem, no invented projects, no fake reading list
+- Page fully legible at rest, before any scroll or hover
 
 ## Deliberately not
 
-- Skill bars, percentage ratings, or star-rating self-assessments
-- A hero occupying the viewport before any content appears
-- Animated backgrounds, particles, parallax, typewriter effects
-- Terracotta-and-cream autumn — the most predictable seasonal palette there is
-- Emoji as section markers
-- "Passionate", "ninja", "rockstar", "guru", or any adjective applied to myself
+- Seasonal theming or a theme picker — removed on purpose; a new look each season is done by hand
+- A single accent color, which is what made the earlier version feel corporate
+- Blurred drop shadows and grey depth
+- Skill bars, percentage ratings, star self-assessments
+- Hero that fills the viewport before any content
+- "Passionate", "ninja", "rockstar", "guru"

@@ -1,306 +1,62 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steve Burgos - Seasons</title>
-<meta name="description" content="Steve Burgos in Dallas. Every season I pick something to work on. Right now it is building projects.">
-<meta name="author" content="Steve Burgos">
-<link rel="canonical" href="https://stevethetechguy.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Steve Burgos - Seasons">
-<meta property="og:description" content="Every season I pick something to work on. Right now it is building projects.">
-<meta property="og:url" content="https://stevethetechguy.github.io/">
-<meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..900,0..100,0..1&family=Nunito:wght@400;600;700;800&display=swap">
-<style>
-:root{
-  --disp:'Fraunces',Georgia,'Times New Roman',serif;
-  --body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --r:18px; --bw:2.5px;
-  --ground:#FFF7E0;--surface:#FFFCF2;--ink:#2A1D05;--ink2:#5C4718;
-  --line:#EEDCA8;--accent:#08698F;--accent2:#C13A22;
-}
-:root[data-season="autumn"]{--ground:#FFF3E2;--surface:#FFFBF4;--ink:#33190A;--ink2:#6A4326;
-  --line:#E8CFAE;--accent:#B44A0C;--accent2:#8A2F63}
-:root[data-season="winter"]{--ground:#EDF4F9;--surface:#FAFCFE;--ink:#0B1A2A;--ink2:#37506B;
-  --line:#C6DAE8;--accent:#0A6E96;--accent2:#B32F42}
-:root[data-season="spring"]{--ground:#EFF8EC;--surface:#FAFDF8;--ink:#0E1F12;--ink2:#375A3F;
-  --line:#C9E2C6;--accent:#1E7A45;--accent2:#C0246F}
-:root[data-season="summer"]{--ground:#FFF7E0;--surface:#FFFCF2;--ink:#2A1D05;--ink2:#5C4718;
-  --line:#EEDCA8;--accent:#08698F;--accent2:#C13A22}
-@media (prefers-color-scheme:dark){
- :root:not([data-mode="light"]){--ground:#141007;--surface:#221B0D;--ink:#FFF3D6;--ink2:#D4C193;
-   --line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
- :root:not([data-mode="light"])[data-season="autumn"]{--ground:#1C1108;--surface:#2A1B0F;
-   --ink:#FFEEDA;--ink2:#D6B692;--line:#463016;--accent:#FF9F4A;--accent2:#F58CC4}
- :root:not([data-mode="light"])[data-season="winter"]{--ground:#07131E;--surface:#0F2030;
-   --ink:#E1EEF8;--ink2:#A6C0D6;--line:#1E3446;--accent:#5FC2E8;--accent2:#FF8A9B}
- :root:not([data-mode="light"])[data-season="spring"]{--ground:#08130C;--surface:#102015;
-   --ink:#E0F2DF;--ink2:#A5C7AA;--line:#1E3524;--accent:#5FD183;--accent2:#FF7FB8}
- :root:not([data-mode="light"])[data-season="summer"]{--ground:#141007;--surface:#221B0D;
-   --ink:#FFF3D6;--ink2:#D4C193;--line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
-}
-:root[data-mode="dark"]{--ground:#141007;--surface:#221B0D;--ink:#FFF3D6;--ink2:#D4C193;
-  --line:#3D3116;--accent:#54C6EE;--accent2:#FF8A63}
-:root[data-mode="dark"][data-season="autumn"]{--ground:#1C1108;--surface:#2A1B0F;--ink:#FFEEDA;
-  --ink2:#D6B692;--line:#463016;--accent:#FF9F4A;--accent2:#F58CC4}
-:root[data-mode="dark"][data-season="winter"]{--ground:#07131E;--surface:#0F2030;--ink:#E1EEF8;
-  --ink2:#A6C0D6;--line:#1E3446;--accent:#5FC2E8;--accent2:#FF8A9B}
-:root[data-mode="dark"][data-season="spring"]{--ground:#08130C;--surface:#102015;--ink:#E0F2DF;
-  --ink2:#A5C7AA;--line:#1E3524;--accent:#5FD183;--accent2:#FF7FB8}
-
-*{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
-  transition:background .35s ease,color .35s ease}
-h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;
-  font-variation-settings:'SOFT' 70,'WONK' 1;letter-spacing:-.01em;text-wrap:balance}
-a{color:var(--accent);font-weight:700;text-decoration:none;
-  box-shadow:inset 0 -.14em 0 var(--accent);transition:box-shadow .15s,color .15s}
-a:hover{box-shadow:inset 0 -.55em 0 var(--accent);color:var(--surface)}
-:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:6px}
-.wrap{max-width:960px;margin:0 auto;padding:0 clamp(18px,4vw,32px) 90px}
-
-/* masthead */
-header{padding:clamp(34px,7vw,72px) 0 clamp(20px,3vw,30px)}
-.hi{display:inline-block;font-weight:800;font-size:14px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--surface);background:var(--accent2);
-  padding:6px 14px;border-radius:999px;transform:rotate(-1.6deg)}
-h1{font-size:clamp(48px,11vw,110px);line-height:.9;margin:18px 0 0}
-.tag{font-size:clamp(18px,2.4vw,23px);color:var(--ink2);max-width:36ch;margin:16px 0 0;
-  font-weight:600}
-.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.chip{display:inline-block;font-weight:800;font-size:15px;padding:9px 18px;
-  border:var(--bw) solid var(--ink);border-radius:999px;background:var(--surface);
-  color:var(--ink);box-shadow:3px 3px 0 var(--ink);
-  transition:transform .12s,box-shadow .12s}
-.chip:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);color:var(--ink)}
-
-/* section heads */
-section{padding-top:clamp(38px,6vw,60px)}
-h2{font-size:clamp(28px,4.4vw,40px);margin-bottom:6px}
-.sub{color:var(--ink2);font-weight:600;margin:0 0 22px;font-size:16px}
-
-/* the season card */
-.card{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
-  box-shadow:7px 7px 0 var(--accent);padding:clamp(22px,4vw,40px);transform:rotate(-.5deg)}
-.card .lab{display:inline-block;font-weight:800;font-size:12.5px;letter-spacing:.11em;
-  text-transform:uppercase;background:var(--ink);color:var(--surface);
-  padding:5px 12px;border-radius:999px}
-.card h3{font-size:clamp(30px,5.6vw,56px);line-height:1.02;margin:16px 0 0}
-.card p{font-size:clamp(17px,2.1vw,20px);color:var(--ink2);max-width:52ch;margin:14px 0 0;
-  font-weight:600}
-.card .when{margin-top:20px;font-weight:800;font-size:14px;color:var(--accent);
-  letter-spacing:.03em}
-
-/* editions */
-.eds{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:14px;
-  margin-top:clamp(26px,4vw,40px)}
-.edn{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
-  padding:15px 17px;box-shadow:4px 4px 0 var(--line)}
-.edn.on{box-shadow:4px 4px 0 var(--accent2);transform:rotate(.7deg)}
-.edn-s{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink2);margin-bottom:6px}
-.edn-t{font-family:var(--disp);font-weight:700;font-size:21px;line-height:1.15;
-  font-variation-settings:'SOFT' 70,'WONK' 1}
-.edn:not(.on) .edn-t{color:var(--ink2);font-style:italic;font-weight:500}
-
-/* entry cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:16px}
-.item{background:var(--surface);border:var(--bw) solid var(--ink);border-radius:var(--r);
-  padding:18px 19px;box-shadow:4px 4px 0 var(--ink);
-  transition:transform .12s,box-shadow .12s}
-.item:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--accent)}
-.item h3{font-size:21px;line-height:1.2}
-.item h3 a{box-shadow:none;color:var(--ink)}
-.item h3 a:hover{box-shadow:none;color:var(--accent)}
-.item p{margin:9px 0 0;color:var(--ink2);font-size:15.5px;font-weight:600}
-.item .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-.pill{font-weight:800;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
-  padding:4px 10px;border-radius:999px;background:var(--line);color:var(--ink2)}
-
-/* season switcher */
-.pick{position:fixed;right:14px;bottom:14px;z-index:9;display:flex;gap:7px}
-.pick button{font-family:var(--body);font-weight:800;font-size:12px;letter-spacing:.06em;
-  text-transform:uppercase;padding:9px 12px;border:var(--bw) solid var(--ink);
-  border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;
-  box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
-.pick button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
-.pick button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
-
-footer{margin-top:clamp(46px,7vw,80px);padding-top:20px;border-top:var(--bw) dashed var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-weight:700;font-size:14.5px;color:var(--ink2)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<header>
-  <span class="hi" id="hi"></span>
-  <h1 id="nm"></h1>
-  <p class="tag" id="tg"></p>
-  <div class="links" id="lk"></div>
-</header>
-
-<section>
-  <h2>What I'm on right now</h2>
-  <p class="sub">Every season I pick one thing and go at it.</p>
-  <div class="card">
-    <span class="lab" id="ch-lab"></span>
-    <h3 id="ch-title"></h3>
-    <p id="ch-state"></p>
-    <div class="when" id="ch-when"></div>
+---
+layout: default
+title: null
+---
+<div class="hero">
+  <span class="hi">Hi, I'm Steve</span>
+  <h1>I build <em>things</em>.</h1>
+  <p>{{ site.tagline }}</p>
+  <div class="cta">
+    <a class="btn solid" href="{{ '/projects/' | relative_url }}">See my projects</a>
+    <a class="btn" href="{{ '/essays/' | relative_url }}">Read my essays</a>
+    <a class="btn" href="{{ '/about/' | relative_url }}">About me</a>
+    <a class="btn" href="https://github.com/{{ site.github_username }}">GitHub</a>
   </div>
-  <div class="eds" id="eds"></div>
-</section>
-
-<section id="s-proj" hidden>
-  <h2>Projects</h2><p class="sub">Things I've built and want you to look at.</p>
-  <div class="grid" id="proj"></div>
-</section>
-
-<section id="s-now" hidden>
-  <h2>On the nightstand</h2><p class="sub">What I'm reading at the moment.</p>
-  <div class="grid" id="now"></div>
-</section>
-
-<section id="s-read" hidden>
-  <h2>Reading by season</h2><p class="sub">A list for each chapter.</p>
-  <div id="read"></div>
-</section>
-
-<section id="s-work" hidden>
-  <h2>Where I've worked</h2><p class="sub"></p>
-  <div class="grid" id="work"></div>
-</section>
-
-<section id="s-edu" hidden>
-  <h2>School</h2><p class="sub"></p>
-  <div class="grid" id="edu"></div>
-</section>
-
-<footer><span id="ft"></span><span id="ft2"></span></footer>
 </div>
-<div class="pick" id="pick" role="group" aria-label="Preview a season"></div>
 
-<script>
-/* =========================================================================
-   Everything on this site comes from here. Empty list = section disappears.
-   ========================================================================= */
-var DATA={
-  name:"Steve Burgos",
-  greeting:"Hi, I'm Steve",
-  tagline:"I build things with Java, Spring and Python, out of Dallas.",
-  location:"Dallas, Texas",
-  github:"stevethetechguy",
-  email:"burgossteve95@gmail.com",
+{% if site.posts.size > 0 %}
+<section>
+  <div class="sh"><h2>Latest essays</h2><a href="{{ '/essays/' | relative_url }}">All essays</a></div>
+  <div class="rows">
+    {% for post in site.posts limit:3 %}
+    <article class="row">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <div class="when">{{ post.date | date: "%B %-d, %Y" }}</div>
+      {% if post.blurb %}<p>{{ post.blurb }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-  /* The season you're in. Change these and the whole site reissues. */
-  chapter:{
-    season:"autumn", year:2026,
-    label:"This season",
-    title:"Building things and finishing them",
-    statement:"I'm spending this one shipping projects instead of starting them. Fewer tabs, more finished repos.",
-    when:"September - December 2026"
-  },
+{% assign featured = site.data.projects | where: "featured", true %}
+{% if featured.size > 0 %}
+<section>
+  <div class="sh"><h2>Some things I made</h2><a href="{{ '/projects/' | relative_url }}">All projects</a></div>
+  <div class="grid">
+    {% for p in featured %}
+    <article class="card">
+      <h3>{% if p.link %}<a href="{{ p.link }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+      {% if p.what %}<p>{{ p.what }}</p>{% endif %}
+      {% if p.tags %}<div class="meta">{% for t in p.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-  /* Seasons ahead. Give one a title when you know what it'll be. */
-  editions:[
-    {season:"autumn", year:2026, title:"Building things", state:"current"},
-    {season:"winter", year:2026, title:null, state:"unwritten"},
-    {season:"spring", year:2027, title:null, state:"unwritten"},
-    {season:"summer", year:2027, title:null, state:"unwritten"}
-  ],
-
-  /* --- YOU PICK THESE --- {name, what, link, tags:[]} */
-  projects:[],
-
-  /* --- TO FILL --- {title, author, note} */
-  now:[],
-
-  /* --- TO FILL --- {season, year, books:[{title, author, note}]} */
-  reading:[],
-
-  /* --- TO FILL --- {role, org, from, to, note} */
-  work:[],
-
-  /* --- TO FILL --- {credential, school, from, to, note} */
-  education:[]
-};
-
-var NAMES={spring:"Spring",summer:"Summer",autumn:"Fall",winter:"Winter"};
-var CH=DATA.chapter;
-var q=new URLSearchParams(location.search).get("season");
-var shown=(q&&NAMES[q])?q:CH.season;
-document.documentElement.setAttribute("data-season",shown);
-
-document.getElementById("hi").textContent=DATA.greeting;
-document.getElementById("nm").textContent=DATA.name;
-document.getElementById("tg").textContent=DATA.tagline;
-document.getElementById("lk").innerHTML=
-  '<a class="chip" href="https://github.com/'+DATA.github+'">GitHub</a>'+
-  '<a class="chip" href="mailto:'+DATA.email+'">Email me</a>';
-
-document.getElementById("ch-lab").textContent=CH.label+" - "+NAMES[CH.season]+" "+CH.year;
-document.getElementById("ch-title").textContent=CH.title;
-document.getElementById("ch-state").textContent=CH.statement;
-document.getElementById("ch-when").textContent=CH.when;
-
-document.getElementById("eds").innerHTML=DATA.editions.map(function(e){
-  return '<div class="edn'+(e.state==="current"?" on":"")+'">'+
-    '<div class="edn-s">'+NAMES[e.season]+' '+e.year+'</div>'+
-    '<div class="edn-t">'+(e.title||"not written yet")+'</div></div>';
-}).join("");
-
-function card(title,body,meta,href){
-  return '<div class="item"><h3>'+(href?'<a href="'+href+'">'+title+'</a>':title)+'</h3>'+
-    (body?'<p>'+body+'</p>':'')+
-    (meta&&meta.length?'<div class="meta">'+meta.map(function(t){
-      return '<span class="pill">'+t+'</span>';}).join("")+'</div>':'')+'</div>';
-}
-function show(id,html){ if(!html)return;
-  document.getElementById("s-"+id).hidden=false;
-  document.getElementById(id).innerHTML=html; }
-
-show("proj", DATA.projects.map(function(p){
-  return card(p.name,p.what,p.tags,p.link);}).join(""));
-show("now", DATA.now.map(function(b){
-  return card(b.title,b.note,b.author?[b.author]:null);}).join(""));
-show("work", DATA.work.map(function(w){
-  return card(w.role,w.note,[w.org,w.from+" - "+(w.to||"now")]);}).join(""));
-show("edu", DATA.education.map(function(e){
-  return card(e.credential,e.note,[e.school,e.from+" - "+(e.to||"")]);}).join(""));
-
-if(DATA.reading.length){
-  document.getElementById("s-read").hidden=false;
-  document.getElementById("read").innerHTML=DATA.reading.map(function(ed){
-    return '<h3 style="margin:26px 0 12px;font-size:22px">'+NAMES[ed.season]+' '+ed.year+'</h3>'+
-      '<div class="grid">'+ed.books.map(function(b){
-        return card(b.title,b.note,b.author?[b.author]:null);}).join("")+'</div>';
-  }).join("");
-}
-
-document.getElementById("ft").textContent=DATA.name+" / "+DATA.location;
-document.getElementById("ft2").innerHTML='<a href="https://github.com/'+DATA.github+'">'+
-  'github.com/'+DATA.github+'</a>';
-
-var pick=document.getElementById("pick");
-["spring","summer","autumn","winter"].forEach(function(s){
-  var b=document.createElement("button");
-  b.textContent=NAMES[s]; b.title="Preview "+NAMES[s];
-  b.setAttribute("aria-pressed", s===shown?"true":"false");
-  b.addEventListener("click",function(){
-    document.documentElement.setAttribute("data-season",s);
-    Array.prototype.forEach.call(pick.children,function(x){
-      x.setAttribute("aria-pressed","false")});
-    b.setAttribute("aria-pressed","true");
-  });
-  pick.appendChild(b);
-});
-</script>
-</body>
-</html>
+{% assign now_reading = site.data.reading | where: "status", "current" %}
+{% if now_reading.size > 0 %}
+<section>
+  <div class="sh"><h2>Reading right now</h2><a href="{{ '/reading/' | relative_url }}">The whole list</a></div>
+  <div class="grid">
+    {% for b in now_reading %}
+    <article class="card">
+      <h3>{{ b.title }}</h3>
+      {% if b.note %}<p>{{ b.note }}</p>{% endif %}
+      {% if b.author %}<div class="meta"><span class="pill">{{ b.author }}</span></div>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
