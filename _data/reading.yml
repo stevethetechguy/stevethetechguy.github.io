@@ -6,6 +6,7 @@
 #   note:     one line - what it's about, or why you picked it up
 #   finished: 2026-08   (only for finished books)
 #   image:    /assets/img/books/slug.svg  (optional)
+#   review:   scale   -> links the card to _reviews/scale.md
 
 - title: Scale
   author: Geoffrey West

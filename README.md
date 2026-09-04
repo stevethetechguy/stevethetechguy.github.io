@@ -12,6 +12,7 @@ You never need to touch HTML. Everything lives in markdown or YAML.
 | Write an essay | New file in `_posts/` named `YYYY-MM-DD-title.md` |
 | Add a project | `_data/projects.yml` |
 | Add a book | `_data/reading.yml` |
+| Review a book | New file in `_reviews/` named `<slug>.md` |
 | Change my name, tagline, email | `_config.yml` |
 
 ### Writing an essay
@@ -44,6 +45,28 @@ The date in the filename sets the publish date. Anything in `_drafts/` is not pu
   tags: [Java, Spring, Microservices]
   featured: true      # also shows on the home page
 ```
+
+### Reviewing a book
+
+Create `_reviews/scale.md`:
+
+```markdown
+---
+layout: review
+title: Scale
+author: Geoffrey West
+slug: scale
+image: /assets/img/books/scale.svg
+date: 2026-10-01
+verdict: One line saying what you actually think. Shows in large type.
+---
+
+Markdown from here.
+```
+
+Then add `review: scale` to that book in `_data/reading.yml` and the card links to it at
+`/reading/scale/`. A book with no review just shows "Review when I finish it" instead.
+There's a starter file at `_drafts/review-scale.md` - move it to `_reviews/` when ready.
 
 ### Adding a book
 

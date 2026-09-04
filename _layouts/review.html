@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="review">
+  <header class="ph">
+    <a class="back" href="{{ '/reading/' | relative_url }}">All reading</a>
+    <h1>{{ page.title }}</h1>
+    <p class="ph-b">
+      {% if page.author %}<span class="pill">{{ page.author }}</span>{% endif %}
+      {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>{% endif %}
+    </p>
+  </header>
+  {% if page.image %}
+  <div class="review-cover">
+    <img src="{{ page.image | relative_url }}" alt="Illustration for {{ page.title }}">
+  </div>
+  {% endif %}
+  {% if page.verdict %}<p class="verdict">{{ page.verdict }}</p>{% endif %}
+  <div class="prose">{{ content }}</div>
+</article>

@@ -1,14 +1,24 @@
+{% assign review = site.reviews | where: "slug", include.book.review | first %}
 <article class="card{% if include.book.image %} has-cover{% endif %}">
   {% if include.book.image %}
   <div class="cover">
+    {% if review %}<a href="{{ review.url | relative_url }}" tabindex="-1" aria-hidden="true">{% endif %}
     <img src="{{ include.book.image | relative_url }}"
          alt="Illustration for {{ include.book.title }}" loading="lazy">
+    {% if review %}</a>{% endif %}
   </div>
   {% endif %}
   <div class="card-body">
-    <h3>{{ include.book.title }}</h3>
+    <h3>{% if review %}<a href="{{ review.url | relative_url }}">{{ include.book.title }}</a>{% else %}{{ include.book.title }}{% endif %}</h3>
     {% if include.book.note %}<p>{{ include.book.note }}</p>{% endif %}
     {% if include.book.finished %}<div class="when">{{ include.book.finished }}</div>{% endif %}
-    {% if include.book.author %}<div class="meta"><span class="pill">{{ include.book.author }}</span></div>{% endif %}
+    <div class="meta">
+      {% if include.book.author %}<span class="pill">{{ include.book.author }}</span>{% endif %}
+    </div>
+    {% if review %}
+      <a class="review-link" href="{{ review.url | relative_url }}">Read my review &rarr;</a>
+    {% elsif include.book.status == "current" %}
+      <span class="review-soon">Review when I finish it</span>
+    {% endif %}
   </div>
 </article>

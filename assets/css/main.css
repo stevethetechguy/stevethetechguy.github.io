@@ -160,6 +160,21 @@ section{padding:clamp(30px,5vw,54px) 0 0}
 .card-body .lede{margin-top:0;font-size:16px;color:var(--ink);font-weight:700}
 .card-body p+p{margin-top:9px;font-size:15px;font-weight:600;color:var(--ink2)}
 
+/* review link on a card */
+.review-link{display:inline-block;margin-top:14px;font-size:14.5px;font-weight:800;
+  color:var(--c);box-shadow:none}
+.review-link:hover{box-shadow:inset 0 -.13em 0 var(--c)}
+.review-soon{display:inline-block;margin-top:14px;font-size:13.5px;font-weight:700;
+  color:var(--ink2);font-style:italic}
+
+/* the review page */
+.review-cover{border:var(--bw) solid var(--ink);border-radius:var(--r);overflow:hidden;
+  box-shadow:6px 6px 0 var(--c4);margin:6px 0 30px;line-height:0;max-width:680px}
+.review-cover img{width:100%;height:auto;display:block}
+.verdict{font-family:var(--disp);font-weight:500;font-variation-settings:'SOFT' 70,'WONK' 1;
+  font-size:clamp(20px,2.7vw,26px);line-height:1.4;color:var(--ink);max-width:52ch;
+  border-left:var(--bw) solid var(--c4);padding-left:20px;margin:0 0 28px}
+
 /* empty state */
 .empty{background:var(--surface);border:var(--bw) dashed var(--line);border-radius:var(--r);
   padding:clamp(28px,5vw,48px);text-align:center}

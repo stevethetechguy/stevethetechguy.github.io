@@ -11,6 +11,11 @@ baseurl: ""
 
 # Essays live at /essays/<title>/
 permalink: /essays/:title/
+collections:
+  reviews:
+    output: true
+    permalink: /reading/:name/
+
 markdown: kramdown
 kramdown:
   input: GFM
