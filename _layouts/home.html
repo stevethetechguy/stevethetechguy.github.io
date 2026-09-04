@@ -7,12 +7,15 @@ layout: default
   <p>{{ page.tagline | default: site.tagline }}</p>
 </div>
 
+{% assign body = content | strip %}
+{% if body != "" %}
 <section class="nowsec">
   <div class="sh"><h2>{{ page.now_title | default: "What I'm working on" }}</h2></div>
   <div class="prose nowbody">
     {{ content }}
   </div>
 </section>
+{% endif %}
 
 {% if site.posts.size > 0 %}
 <section>
@@ -63,7 +66,7 @@ layout: default
 
 <section class="tick">
   <div class="sh"><h2>What makes me tick</h2></div>
-  <p class="tick-lead">The repos only tell you what I built. These tell you why.</p>
+  <p class="tick-lead">Learn more.</p>
   <div class="grid">
     <article class="card">
       <h3><a href="{{ '/essays/' | relative_url }}">Essays</a></h3>
