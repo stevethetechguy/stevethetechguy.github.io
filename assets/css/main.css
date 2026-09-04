@@ -181,6 +181,6 @@ section{padding:clamp(30px,5vw,54px) 0 0}
 
 .foot{max-width:960px;margin:clamp(50px,8vw,90px) auto 0;
   padding:22px clamp(18px,4vw,32px) 40px;border-top:var(--bw) dashed var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  display:flex;justify-content:flex-start;gap:16px;flex-wrap:wrap;
   font-weight:700;font-size:14.5px;color:var(--ink2)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
