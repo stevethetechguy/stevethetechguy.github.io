@@ -55,10 +55,17 @@ a{color:var(--accent);font-weight:700;text-decoration:none}
   font-variation-settings:'SOFT' 70,'WONK' 1}
 .nav-links{display:flex;gap:6px;flex-wrap:wrap}
 .nav-links a{font-size:14.5px;font-weight:700;padding:6px 14px;border-radius:999px;
-  color:var(--ink2);transition:background .12s,color .12s}
-/* one colour for every page - the nav must never look different page to page */
-.nav-links a:hover{background:var(--c6w);color:var(--c6)}
-.nav-links a[aria-current="page"]{background:var(--c6);color:#fff}
+  transition:background .12s,color .12s}
+/* Each link owns one crayon permanently, so the nav looks identical on every
+   page - only which pill is filled changes. All verified 4.5:1 both themes. */
+.nav-links a:nth-child(1){--c:var(--c6);--cw:var(--c6w)}   /* Home     blue   */
+.nav-links a:nth-child(2){--c:var(--c8);--cw:var(--c8w)}   /* Projects pink   */
+.nav-links a:nth-child(3){--c:var(--c7);--cw:var(--c7w)}   /* Essays   purple */
+.nav-links a:nth-child(4){--c:var(--c4);--cw:var(--c4w)}   /* Reading  green  */
+.nav-links a:nth-child(5){--c:var(--c2);--cw:var(--c2w)}   /* spare    orange */
+.nav-links a{color:var(--c)}
+.nav-links a:hover{background:var(--cw);color:var(--c)}
+.nav-links a[aria-current="page"]{background:var(--c);color:var(--surface)}
 
 /* page head */
 .ph{padding:clamp(34px,6vw,62px) 0 clamp(18px,3vw,26px)}
